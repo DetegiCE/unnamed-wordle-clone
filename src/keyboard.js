@@ -1,4 +1,5 @@
-import { words5 } from '../resources/words5';
+import { words5 } from '../resources/words5.js';
+import { hasWord, getWordLine, returnColors } from './wordtools.js';
 
 var currentCursor = 1;
 var currentLine = 1;
@@ -37,19 +38,44 @@ function keyDownEvent(e) {
         document.getElementById('w'+currentLine+currentCursor).innerText = '';
     }
     else if(key === 13) { // Enter
+        var greenCount = 0;
         if(currentCursor !== 6) {
             alert("You must complete the word first!");
             return;
         }
-        if(currentLine === 7) {
-            alert("Game Over!");
-            return;
-        }
-        if(currentLine === 6) {
-
+        if(currentCursor === 6) {
+            if(hasWord(getWordLine(currentLine))) {
+                let colors = returnColors(word, currentLine);
+                for(var i=0 ; i<5 ; i++) {
+                    let element = document.getElementById('w'+currentLine+(i+1));
+                    console.log('w'+currentLine+i);
+                    if(colors[i] === 'G') {
+                        element.classList.add('green');
+                        greenCount++;
+                    }
+                    else if(colors[i] === 'Y') {
+                        element.classList.add('yellow');
+                    }
+                    else {
+                        element.classList.add('black');
+                    }
+                }
+            }
+            else {
+                alert("Your word does not exist!");
+                return;
+            }
         }
         currentLine++;
         currentCursor = 1;
+        if(greenCount === 5) {
+            alert("Congratulations! You've win the game!\nRefresh for the new game.");
+            return;
+        }
+        if(currentLine === 7) {
+            alert("You lost! The answer was " + word + "\nRefresh for the new game.");
+            return;
+        }
     }
     else {
         return;
