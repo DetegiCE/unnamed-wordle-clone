@@ -1,12 +1,11 @@
-import { Words } from '../resources/words5';
+import { words5 } from '../resources/words5';
 
 var currentCursor = 1;
 var currentLine = 1;
 const getWord = () => {
     while (true) {
-        let wordList = new Words;
-        let tmpword: string = wordList.words5[(Math.random() * wordList.words5.length) | 0];
-        let wordArr: string[] = tmpword.split('');
+        let tmpword = words5[(Math.random() * words5.length) | 0];
+        let wordArr = tmpword.split('');
         let uniqStr = wordArr.filter(function (val, idx, arr) {
             return arr.indexOf(val) === idx;
         }).join('');
@@ -17,7 +16,7 @@ const getWord = () => {
 };
 const word = getWord();
 
-function keyDownEvent(e: KeyboardEvent) {
+function keyDownEvent(e) {
     const key = e.keyCode;
     console.log(e.key);
     console.log(key);

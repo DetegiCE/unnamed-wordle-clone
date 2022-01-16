@@ -1,0 +1,3 @@
+const hasWord = (word) => {
+
+}
