@@ -1,5 +1,5 @@
 # unnamed-wordle-clone
-Inspired from Wordle. Want more daily tickets.
+Inspired from [Wordle](https://www.powerlanguage.co.uk/wordle/). Want more daily tickets.
 
 ## Resources
 
