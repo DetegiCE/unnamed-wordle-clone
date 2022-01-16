@@ -1,4 +1,6 @@
 # unnamed-wordle-clone
+[Let's Go](https://detegice.github.io/unnamed-wordle-clone/)
+
 Inspired from [Wordle](https://www.powerlanguage.co.uk/wordle/). Want more daily tickets.
 
 ## Resources
