@@ -39,16 +39,20 @@ const enterEvent = () => {
             let colors = returnColors(word, currentLine);
             for(var i=0 ; i<5 ; i++) {
                 let element = document.getElementById('w'+currentLine+(i+1));
+                let keyelem = document.getElementById('key'+getWordLine(currentLine)[i]);
                 console.log('w'+currentLine+i);
                 if(colors[i] === 'G') {
                     element.classList.add('green');
+                    keyelem.classList.add('green');
                     greenCount++;
                 }
                 else if(colors[i] === 'Y') {
                     element.classList.add('yellow');
+                    keyelem.classList.add('yellow');
                 }
                 else {
                     element.classList.add('black');
+                    keyelem.classList.add('black');
                 }
             }
         }
