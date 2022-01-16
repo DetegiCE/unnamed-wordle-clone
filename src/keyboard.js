@@ -11,23 +11,14 @@ const getWord = () => {
             return arr.indexOf(val) === idx;
         }).join('');
         if (tmpword.length === uniqStr.length) {
+            let title = document.getElementById('title');
+            title.setAttribute('onclick', 'console.log("'+tmpword+'");')
             return tmpword;
         }
     }
 };
 
 const word = getWord();
-
-var clickme = 0;
-const a = () => {
-    clickme++;
-    if(clickme === 19) {
-        alert("You want an answer?");
-    }
-    if(clickme === 20) {
-        alert("The answer is "+word);
-    }
-}
 
 function keyDownEvent(e) {
     const key = e.keyCode;
