@@ -19,10 +19,6 @@ const word = getWord();
 
 function keyDownEvent(e) {
     const key = e.keyCode;
-    console.log(e.key);
-    console.log(key);
-    console.log(word);
-
     if(key >= 65 && key <= 90) {
         if(currentCursor === 6) {
             return;
