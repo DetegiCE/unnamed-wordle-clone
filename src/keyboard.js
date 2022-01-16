@@ -15,7 +15,19 @@ const getWord = () => {
         }
     }
 };
+
 const word = getWord();
+
+var clickme = 0;
+const a = () => {
+    clickme++;
+    if(clickme === 19) {
+        alert("You want an answer?");
+    }
+    if(clickme === 20) {
+        alert("The answer is "+word);
+    }
+}
 
 function keyDownEvent(e) {
     const key = e.keyCode;
